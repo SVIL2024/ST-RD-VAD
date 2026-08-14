@@ -101,4 +101,36 @@ ST-RD-VAD/
 │   └── test_rbdc_tbdc.py         # RBDC/TBDC evaluation script
 └── README.md
 ```
+## Training/Inference
+
+Train the model with `train.py`:
+
+```bash
+python train.py --dataset_type ped2
+```
+
+Evaluate the model with `test.py`:
+
+```bash
+python test.py
+```
+
+For other datasets, set `dataset_type` to `avenue` or `shanghai`.
+
+## RBDC/TBDC Evaluation
+
+In addition to frame-level AUC, we report the **Region-Based Detection Criterion (RBDC)** and **Track-Based Detection Criterion (TBDC)** for spatial and track-level evaluation.
+
+The corresponding evaluation scripts are provided in the `evaluation/` directory:
+
+```text
+evaluation/
+├── evaluate_rbdc_tbdc.py
+├── rbdc_tbdc_metrics.py
+└── test_rbdc_tbdc.py
+```
+
+For UCSD Ped2 and CUHK Avenue, please use the region- and track-level annotations provided by MERL. For ShanghaiTech, please use the annotations released with the AED repository. The download links are provided in the [Region- and Track-Level Annotations](#region--and-track-level-annotations) section above.
+
+The evaluation follows the standard protocol with an IoU threshold of **0.1** for region matching and a **10%** detection threshold for anomalous tracks.
 
