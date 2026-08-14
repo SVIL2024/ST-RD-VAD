@@ -83,24 +83,24 @@ For RBDC/TBDC evaluation, please download the corresponding region- and track-le
 
 ```text
 ST-RD-VAD/
+├── evaluation/                   # RBDC/TBDC evaluation
 ├── I3D_model.py                  # I3D teacher network
-├── data.py                       # Dataset loading and preprocessing
+├── collect_validation_results.py # Collect validation results
+├── data.py                       # Data loading and preprocessing
+├── frame_labels_avenue.npy       # Frame-level labels for CUHK Avenue
+├── frame_labels_ped2.npy         # Frame-level labels for UCSD Ped2
+├── frame_labels_shanghai.npy     # Frame-level labels for ShanghaiTech
+├── framework.png                 # Framework overview
 ├── loss.py                       # Loss functions
 ├── memory.py                     # Memory module
 ├── model.py                      # ST-RD-VAD model
+├── test.py                       # Testing script
 ├── train.py                      # Training script
-├── test.py                       # Frame-level evaluation
 ├── utils.py                      # Utility functions
-├── frame_labels_ped2.npy         # Frame-level labels for UCSD Ped2
-├── frame_labels_avenue.npy       # Frame-level labels for CUHK Avenue
-├── frame_labels_shanghai.npy     # Frame-level labels for ShanghaiTech
-├── framework.png                 # Overview of the proposed framework
-├── evaluation/
-│   ├── evaluate_rbdc_tbdc.py     # RBDC/TBDC evaluation
-│   ├── rbdc_tbdc_metrics.py      # RBDC/TBDC metrics
-│   └── test_rbdc_tbdc.py         # RBDC/TBDC evaluation script
+├── validation.py                 # Training-derived validation
 └── README.md
 ```
+
 ## Training/Inference
 
 Train the model with `train.py`:
